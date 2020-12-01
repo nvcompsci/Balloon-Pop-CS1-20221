@@ -14,6 +14,7 @@ public void draw() {
   for (Balloon balloon : balloons) {
     if (!balloon.alive()) continue;
     
+    balloon.balloonVsMouse();
     balloon.move();
     balloon.draw();
   }
