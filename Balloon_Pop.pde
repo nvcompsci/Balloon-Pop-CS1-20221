@@ -24,6 +24,11 @@ public void draw() {
   }
   
   for (Spike spike : spikes) {
+    
+    for (Balloon b : balloons) {
+      spike.attack(b);
+    }
+    
     spike.collideWorldBounds(600,600);
     spike.move();
     spike.draw();

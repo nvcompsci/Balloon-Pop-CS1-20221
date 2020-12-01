@@ -27,4 +27,10 @@ public class Spike {
       vx *= -1;
     }
   }
+  
+  public void attack(Balloon b) {
+    if (dist(b.getX(),b.getY(),x,y) <= b.getSize() / 2 + size / 2) {
+      b.pop();
+    }
+  }
 }
