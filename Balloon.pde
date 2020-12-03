@@ -24,6 +24,7 @@ public class Balloon {
   
   public void balloonVsMouse() {
     if (dist(x,y,mouseX,mouseY) <= size/2) {
+      score++;
       alive = false;
     }
   }

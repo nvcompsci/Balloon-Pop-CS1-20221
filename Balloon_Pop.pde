@@ -1,5 +1,7 @@
 Balloon[] balloons = new Balloon[400];
 Spike[] spikes = new Spike[6];
+int score = 0;
+int spikeScore = 0;
 
 public void setup() {
   size(600,600);
@@ -15,6 +17,7 @@ public void setup() {
 public void draw() {
   background(220);
   
+  
   for (Balloon balloon : balloons) {
     if (!balloon.alive()) continue;
     
@@ -24,13 +27,17 @@ public void draw() {
   }
   
   for (Spike spike : spikes) {
-    
     for (Balloon b : balloons) {
-      spike.attack(b);
+      if (b.alive)
+        spike.attack(b);
     }
     
     spike.collideWorldBounds(600,600);
     spike.move();
     spike.draw();
   }
+  
+  fill(0);
+  text(score,10,10);
+  text(spikeScore,width/2,10);
 }
